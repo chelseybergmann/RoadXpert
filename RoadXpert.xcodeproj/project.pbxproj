@@ -8,17 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		318105562531095200A42052 /* RoadXpertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318105552531095200A42052 /* RoadXpertApp.swift */; };
-		318105582531095200A42052 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318105572531095200A42052 /* ContentView.swift */; };
 		3181055A2531095600A42052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318105592531095600A42052 /* Assets.xcassets */; };
 		3181055D2531095600A42052 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3181055C2531095600A42052 /* Preview Assets.xcassets */; };
 		318105682531095700A42052 /* RoadXpertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318105672531095700A42052 /* RoadXpertTests.swift */; };
 		318105732531095700A42052 /* RoadXpertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318105722531095700A42052 /* RoadXpertUITests.swift */; };
-		318105892531128D00A42052 /* RecordHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318105882531128D00A42052 /* RecordHistory.swift */; };
-		318105912531135C00A42052 /* SingleHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318105902531135C00A42052 /* SingleHistory.swift */; };
-		318105962533CD1E00A42052 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318105952533CD1E00A42052 /* History.swift */; };
-		3181059F2533EE3B00A42052 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181059D2533EE3B00A42052 /* HistoryTableViewController.swift */; };
-		318105A02533EE3B00A42052 /* HistoryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3181059E2533EE3B00A42052 /* HistoryTableViewController.xib */; };
 		31B8CCB12534EA1E006120AA /* AllData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8CCB02534EA1E006120AA /* AllData.swift */; };
+		31B8CCBD25351696006120AA /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8CCBB25351696006120AA /* History.swift */; };
+		31B8CCBE25351696006120AA /* History.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B8CCBC25351696006120AA /* History.xib */; };
+		31B8CCC32535366E006120AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8CCC22535366E006120AA /* AppDelegate.swift */; };
+		31B8CCCE2535438F006120AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8CCCD2535438F006120AA /* SceneDelegate.swift */; };
+		31FB5C7A2537F75900ABD7EE /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB5C792537F75900ABD7EE /* Start.swift */; };
+		31FB5C9A2538124000ABD7EE /* RecordHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB5C982538124000ABD7EE /* RecordHistory.swift */; };
+		31FB5CA92538157800ABD7EE /* TripHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB5CA82538157800ABD7EE /* TripHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +41,7 @@
 
 /* Begin PBXFileReference section */
 		318105522531095200A42052 /* RoadXpert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadXpert.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		318105552531095200A42052 /* RoadXpertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadXpertApp.swift; sourceTree = "<group>"; };
-		318105572531095200A42052 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		318105552531095200A42052 /* RoadXpertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoadXpertApp.swift; path = RoadXpert/RoadXpertApp.swift; sourceTree = SOURCE_ROOT; };
 		318105592531095600A42052 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3181055C2531095600A42052 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3181055E2531095600A42052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,12 +51,14 @@
 		3181056E2531095700A42052 /* RoadXpertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoadXpertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		318105722531095700A42052 /* RoadXpertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadXpertUITests.swift; sourceTree = "<group>"; };
 		318105742531095700A42052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		318105882531128D00A42052 /* RecordHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHistory.swift; sourceTree = "<group>"; };
-		318105902531135C00A42052 /* SingleHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHistory.swift; sourceTree = "<group>"; };
-		318105952533CD1E00A42052 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
-		3181059D2533EE3B00A42052 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
-		3181059E2533EE3B00A42052 /* HistoryTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewController.xib; sourceTree = "<group>"; };
 		31B8CCB02534EA1E006120AA /* AllData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllData.swift; sourceTree = "<group>"; };
+		31B8CCBB25351696006120AA /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = History.swift; path = RoadXpert/History.swift; sourceTree = SOURCE_ROOT; };
+		31B8CCBC25351696006120AA /* History.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = History.xib; path = RoadXpert/History.xib; sourceTree = SOURCE_ROOT; };
+		31B8CCC22535366E006120AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = RoadXpert/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		31B8CCCD2535438F006120AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = RoadXpert/SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
+		31FB5C792537F75900ABD7EE /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
+		31FB5C982538124000ABD7EE /* RecordHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHistory.swift; sourceTree = "<group>"; };
+		31FB5CA82538157800ABD7EE /* TripHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripHistory.swift; path = RoadXpert/TripHistory.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,16 +110,17 @@
 			isa = PBXGroup;
 			children = (
 				318105552531095200A42052 /* RoadXpertApp.swift */,
-				318105572531095200A42052 /* ContentView.swift */,
 				318105592531095600A42052 /* Assets.xcassets */,
 				3181055E2531095600A42052 /* Info.plist */,
 				3181055B2531095600A42052 /* Preview Content */,
-				318105882531128D00A42052 /* RecordHistory.swift */,
-				318105902531135C00A42052 /* SingleHistory.swift */,
-				318105952533CD1E00A42052 /* History.swift */,
-				3181059D2533EE3B00A42052 /* HistoryTableViewController.swift */,
-				3181059E2533EE3B00A42052 /* HistoryTableViewController.xib */,
 				31B8CCB02534EA1E006120AA /* AllData.swift */,
+				31B8CCBB25351696006120AA /* History.swift */,
+				31B8CCBC25351696006120AA /* History.xib */,
+				31B8CCCD2535438F006120AA /* SceneDelegate.swift */,
+				31B8CCC22535366E006120AA /* AppDelegate.swift */,
+				31FB5C792537F75900ABD7EE /* Start.swift */,
+				31FB5C982538124000ABD7EE /* RecordHistory.swift */,
+				31FB5CA82538157800ABD7EE /* TripHistory.swift */,
 			);
 			path = RoadXpert;
 			sourceTree = "<group>";
@@ -251,8 +254,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				318105A02533EE3B00A42052 /* HistoryTableViewController.xib in Resources */,
 				3181055D2531095600A42052 /* Preview Assets.xcassets in Resources */,
+				31B8CCBE25351696006120AA /* History.xib in Resources */,
 				3181055A2531095600A42052 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,13 +281,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				318105582531095200A42052 /* ContentView.swift in Sources */,
-				318105912531135C00A42052 /* SingleHistory.swift in Sources */,
-				3181059F2533EE3B00A42052 /* HistoryTableViewController.swift in Sources */,
+				31B8CCC32535366E006120AA /* AppDelegate.swift in Sources */,
+				31FB5C7A2537F75900ABD7EE /* Start.swift in Sources */,
 				31B8CCB12534EA1E006120AA /* AllData.swift in Sources */,
+				31B8CCCE2535438F006120AA /* SceneDelegate.swift in Sources */,
 				318105562531095200A42052 /* RoadXpertApp.swift in Sources */,
-				318105892531128D00A42052 /* RecordHistory.swift in Sources */,
-				318105962533CD1E00A42052 /* History.swift in Sources */,
+				31B8CCBD25351696006120AA /* History.swift in Sources */,
+				31FB5CA92538157800ABD7EE /* TripHistory.swift in Sources */,
+				31FB5C9A2538124000ABD7EE /* RecordHistory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
