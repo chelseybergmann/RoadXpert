@@ -6,11 +6,20 @@
 //
 
 import UIKit
+import CoreMotion
 
 class RecordHistory: UIViewController {
+    let motion = CMMotionManager()
+    var timer: Timer!
+
+    
+    //var motion = CMMotionManager()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        
         view.backgroundColor = UIColor.white
         
         // Create "Start" and "Records" buttons.
@@ -30,10 +39,15 @@ class RecordHistory: UIViewController {
         self.view.addSubview(button2)
     }
     
+    
+    
     /*
      Record the trip.
      */
     @objc func record(_ :UIButton!) {
+        calculateIRI()
+        
+        
         let date = Date() // Get current date
         let formatter = DateFormatter()
         formatter.dateFormat = "MM.dd.yy"
@@ -43,7 +57,8 @@ class RecordHistory: UIViewController {
         let hour = calendar.component(.hour, from: date)
         let minutes = calendar.component(.minute, from: date)
         let time = String(hour) + ":" + String(minutes)
-       
+        
+       // Add date and time to history of trips.
        History().addCell(date: result, time: time)
         
     }
@@ -56,4 +71,15 @@ class RecordHistory: UIViewController {
         self.navigationController?.pushViewController(newViewController, animated: true)
         
     }
+    
+    /*
+        Calculate the IRI and display window.
+     */
+     
+    func calculateIRI() {
+        var segpts = 150 // 1.5sec
+        var fs = 100 // Sample rate, Hz
+        var segLength = 8.05 // meters
+        var velMax = 25 // m/s
+    }  
 }

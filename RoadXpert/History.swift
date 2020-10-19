@@ -9,7 +9,7 @@ import UIKit
 
 class History: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var tableView = UITableView()
-    var tableData = [String]()
+    var tableData = Singleton.sharedInstance.firstArray
    
     
     override func viewDidLoad() {

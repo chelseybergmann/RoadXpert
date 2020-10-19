@@ -59,5 +59,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Program requires GPS to track road roughness of current location.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Program requires GPS to track road roughness of current location.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Program requires GPS to track road roughness of current location.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>This app uses your Microphone to allow Voice over IP communication with the Program Admin system.</string>
 </dict>
 </plist>

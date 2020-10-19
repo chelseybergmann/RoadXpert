@@ -20,6 +20,7 @@
 		31FB5C7A2537F75900ABD7EE /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB5C792537F75900ABD7EE /* Start.swift */; };
 		31FB5C9A2538124000ABD7EE /* RecordHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB5C982538124000ABD7EE /* RecordHistory.swift */; };
 		31FB5CA92538157800ABD7EE /* TripHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB5CA82538157800ABD7EE /* TripHistory.swift */; };
+		31FB5CB4253BE2C700ABD7EE /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB5CB3253BE2C600ABD7EE /* Motion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		31FB5C792537F75900ABD7EE /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		31FB5C982538124000ABD7EE /* RecordHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHistory.swift; sourceTree = "<group>"; };
 		31FB5CA82538157800ABD7EE /* TripHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripHistory.swift; path = RoadXpert/TripHistory.swift; sourceTree = SOURCE_ROOT; };
+		31FB5CB3253BE2C600ABD7EE /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Motion.swift; path = RoadXpert/Motion.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				3181055B2531095600A42052 /* Preview Content */,
 				31B8CCB02534EA1E006120AA /* AllData.swift */,
 				31B8CCBB25351696006120AA /* History.swift */,
+				31FB5CB3253BE2C600ABD7EE /* Motion.swift */,
 				31B8CCBC25351696006120AA /* History.xib */,
 				31B8CCCD2535438F006120AA /* SceneDelegate.swift */,
 				31B8CCC22535366E006120AA /* AppDelegate.swift */,
@@ -285,6 +288,7 @@
 				31FB5C7A2537F75900ABD7EE /* Start.swift in Sources */,
 				31B8CCB12534EA1E006120AA /* AllData.swift in Sources */,
 				31B8CCCE2535438F006120AA /* SceneDelegate.swift in Sources */,
+				31FB5CB4253BE2C700ABD7EE /* Motion.swift in Sources */,
 				318105562531095200A42052 /* RoadXpertApp.swift in Sources */,
 				31B8CCBD25351696006120AA /* History.swift in Sources */,
 				31FB5CA92538157800ABD7EE /* TripHistory.swift in Sources */,
