@@ -45,7 +45,7 @@ class RecordHistory: UIViewController {
      Record the trip.
      */
     @objc func record(_ :UIButton!) {
-        calculateIRI()
+        self.navigationController?.pushViewController(Motion(), animated: true)
         
         
         let date = Date() // Get current date

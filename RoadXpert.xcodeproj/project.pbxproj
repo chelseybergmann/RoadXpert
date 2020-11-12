@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		318105562531095200A42052 /* RoadXpertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318105552531095200A42052 /* RoadXpertApp.swift */; };
 		3181055A2531095600A42052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318105592531095600A42052 /* Assets.xcassets */; };
-		3181055D2531095600A42052 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3181055C2531095600A42052 /* Preview Assets.xcassets */; };
 		318105682531095700A42052 /* RoadXpertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318105672531095700A42052 /* RoadXpertTests.swift */; };
 		318105732531095700A42052 /* RoadXpertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318105722531095700A42052 /* RoadXpertUITests.swift */; };
 		31B8CCB12534EA1E006120AA /* AllData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8CCB02534EA1E006120AA /* AllData.swift */; };
@@ -21,6 +20,9 @@
 		31FB5C9A2538124000ABD7EE /* RecordHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB5C982538124000ABD7EE /* RecordHistory.swift */; };
 		31FB5CA92538157800ABD7EE /* TripHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB5CA82538157800ABD7EE /* TripHistory.swift */; };
 		31FB5CB4253BE2C700ABD7EE /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB5CB3253BE2C600ABD7EE /* Motion.swift */; };
+		31FB5E7C2550EE1700ABD7EE /* IRIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB5E7B2550EE1600ABD7EE /* IRIView.swift */; };
+		31FB5E842550EE3000ABD7EE /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB5E832550EE3000ABD7EE /* LineChart.swift */; };
+		31FB5EB52550F1F400ABD7EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31FB5EB42550F1F400ABD7EE /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +46,6 @@
 		318105522531095200A42052 /* RoadXpert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadXpert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		318105552531095200A42052 /* RoadXpertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoadXpertApp.swift; path = RoadXpert/RoadXpertApp.swift; sourceTree = SOURCE_ROOT; };
 		318105592531095600A42052 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3181055C2531095600A42052 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3181055E2531095600A42052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		318105632531095700A42052 /* RoadXpertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoadXpertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		318105672531095700A42052 /* RoadXpertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadXpertTests.swift; sourceTree = "<group>"; };
@@ -61,6 +62,9 @@
 		31FB5C982538124000ABD7EE /* RecordHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHistory.swift; sourceTree = "<group>"; };
 		31FB5CA82538157800ABD7EE /* TripHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripHistory.swift; path = RoadXpert/TripHistory.swift; sourceTree = SOURCE_ROOT; };
 		31FB5CB3253BE2C600ABD7EE /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Motion.swift; path = RoadXpert/Motion.swift; sourceTree = SOURCE_ROOT; };
+		31FB5E7B2550EE1600ABD7EE /* IRIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRIView.swift; path = RoadXpert/IRIView.swift; sourceTree = SOURCE_ROOT; };
+		31FB5E832550EE3000ABD7EE /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		31FB5EB42550F1F400ABD7EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 				3181055E2531095600A42052 /* Info.plist */,
 				3181055B2531095600A42052 /* Preview Content */,
 				31B8CCB02534EA1E006120AA /* AllData.swift */,
+				31FB5E832550EE3000ABD7EE /* LineChart.swift */,
+				31FB5E7B2550EE1600ABD7EE /* IRIView.swift */,
 				31B8CCBB25351696006120AA /* History.swift */,
 				31FB5CB3253BE2C600ABD7EE /* Motion.swift */,
 				31B8CCBC25351696006120AA /* History.xib */,
@@ -131,7 +137,7 @@
 		3181055B2531095600A42052 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				3181055C2531095600A42052 /* Preview Assets.xcassets */,
+				31FB5EB42550F1F400ABD7EE /* Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -257,8 +263,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3181055D2531095600A42052 /* Preview Assets.xcassets in Resources */,
 				31B8CCBE25351696006120AA /* History.xib in Resources */,
+				31FB5EB52550F1F400ABD7EE /* Assets.xcassets in Resources */,
 				3181055A2531095600A42052 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,11 +294,13 @@
 				31FB5C7A2537F75900ABD7EE /* Start.swift in Sources */,
 				31B8CCB12534EA1E006120AA /* AllData.swift in Sources */,
 				31B8CCCE2535438F006120AA /* SceneDelegate.swift in Sources */,
+				31FB5E842550EE3000ABD7EE /* LineChart.swift in Sources */,
 				31FB5CB4253BE2C700ABD7EE /* Motion.swift in Sources */,
 				318105562531095200A42052 /* RoadXpertApp.swift in Sources */,
 				31B8CCBD25351696006120AA /* History.swift in Sources */,
 				31FB5CA92538157800ABD7EE /* TripHistory.swift in Sources */,
 				31FB5C9A2538124000ABD7EE /* RecordHistory.swift in Sources */,
+				31FB5E7C2550EE1700ABD7EE /* IRIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +458,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"RoadXpert/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = RoadXpert/Assets.xcassets;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RoadXpert/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -471,7 +479,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"RoadXpert/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = RoadXpert/Assets.xcassets;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RoadXpert/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

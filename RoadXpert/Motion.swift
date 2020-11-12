@@ -11,11 +11,17 @@ import CoreLocation
 import MapKit
 
 class Motion: UIViewController , CLLocationManagerDelegate {
+    let fc = 10.0 // LPF cutoff freq
+    let fch = 0.5 // HPF cut off
+    var tempArray = [[CGFloat]]();
+    
     var motion = CMMotionManager()
     let locationManager = CLLocationManager()
     var last: CLLocation?
+    var distanceTraveled = CLLocationDistance()
+    
     var speed = 0.0
-    var speeds = [Double]()
+    var speeds = [[Double]]()
     var numSegments = 0
     var index1 = [Double]() // Will be size of numSegments.
     var index2 = [Double](repeating: 0.0, count: 150)
@@ -28,8 +34,8 @@ class Motion: UIViewController , CLLocationManagerDelegate {
     let segLength = 8.05 // meters
     let velMax = 25 // m/s
     
-    var latitude = 0.0
-    var longitude = 0.0
+    var latitude = CLLocationDegrees()
+    var longitude = CLLocationDegrees()
     
     var xGyro = 0.0
     var yGyro = 0.0
@@ -43,10 +49,14 @@ class Motion: UIViewController , CLLocationManagerDelegate {
     var yDevi = 0.0
     var zDevi = 0.0
     
+    //declare blank timer variable
+        var timer = Timer()
+    
     
     init() {
         super.init(nibName: nil, bundle: nil)
         self.wdwd = [Double]()
+        tempArray = [[CGFloat]]();
     }
     
     required init?(coder: NSCoder) {
@@ -58,7 +68,6 @@ class Motion: UIViewController , CLLocationManagerDelegate {
         view.backgroundColor = UIColor.white
     }
     
-    
 
     // Request location access then get motion data.
     override func viewDidAppear(_ animated: Bool) {
@@ -67,21 +76,41 @@ class Motion: UIViewController , CLLocationManagerDelegate {
 
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             locationManager.startUpdatingLocation()
         }
-        
+     
         myDeviceMotion()
         myGyroscope()
         myAccelerometer()
-        window()
+        //in a function or viewDidLoad()
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+       
+      
+    }
+
+    // Add to data when 1.5 seconds is reached before 8.05 m for window resizing.
+    @objc func timerAction(){
+        if distanceTraveled < 8.05 {
+           // getDataForIRI()
+        }
+    }
+    
+    /*
+     Navigate to showing IRI
+     */
+    @objc func showIRI() {
+        let newViewController = IRIView(data: tempArray)
+        self.navigationController?.pushViewController(newViewController, animated: true)
         
     }
-    func window() {
-        var array = [self.speed/Double(self.velMax), self.yAccel, self.xGyro, self.latitude, self.longitude]
-        
-        
-        
+    
+  
+    /*
+     Get current speed.
+     */
+    func getSpeed() -> Double {
+        return self.speed;
     }
     
     func processLocation(_ current:CLLocation) {
@@ -89,23 +118,37 @@ class Motion: UIViewController , CLLocationManagerDelegate {
                 last = current
                 return
         }
-        var distanceTraveled =  last!.distance(from: current)
+       distanceTraveled =  last!.distance(from: current)
       
         self.speed = current.speed
         if (self.speed < 0) {
             self.speed = distanceTraveled / (current.timestamp.timeIntervalSince(last!.timestamp))
             print(self.speed)
         }
+      
         last = current
+     
+        let velocity_temp = self.speed;
+        distanceTraveled = distanceTraveled + velocity_temp/100
+        let data = [CGFloat(self.speed)/CGFloat(self.velMax),CGFloat(self.yAccel),CGFloat(self.xGyro),CGFloat(self.latitude),CGFloat(self.longitude), CGFloat(distanceTraveled)]
+        tempArray.append(data);
+        print(distanceTraveled)
+        print(tempArray)
+        print("^TempArray")
+        showIRI()
+       // if distanceTraveled >= 8.05 {
+              // showIRI()
+               
+           // }
     }
-       
+        
     
     /*
      Manage location.
      */
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let trueData: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(trueData.latitude) \(trueData.longitude)")
+        print("locations = \(trueData.latitude)\(trueData.longitude)")
         self.latitude = trueData.latitude
         self.longitude = trueData.longitude
         
@@ -181,6 +224,4 @@ class Motion: UIViewController , CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
-
