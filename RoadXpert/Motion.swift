@@ -11,14 +11,18 @@ import CoreLocation
 import MapKit
 
 class Motion: UIViewController , CLLocationManagerDelegate {
+    var motionControl = false // Collect motion data while true.
+    
     let fc = 10.0 // LPF cutoff freq
     let fch = 0.5 // HPF cut off
     var tempArray = [[CGFloat]]();
     
     var motion = CMMotionManager()
     let locationManager = CLLocationManager()
+    var startLocation: CLLocation?
     var last: CLLocation?
-    var distanceTraveled = CLLocationDistance()
+    var distanceTraveled = CLLocationDistance() // Between two locations
+    var totalDistance = 0.0
     
     var speed = 0.0
     var speeds = [[Double]]()
@@ -49,9 +53,14 @@ class Motion: UIViewController , CLLocationManagerDelegate {
     var yDevi = 0.0
     var zDevi = 0.0
     
-    //declare blank timer variable
-        var timer = Timer()
+    // Initialize a (x,150,5) array.
+    var data = [[[CGFloat]]]()
+    //Initialize a 150,5 inner array.
+    var inner = [[CGFloat]](repeating: [0.0], count: 150)// Seg length.
+    var size = 0
     
+    //declare blank timer variable
+    var timer = Timer()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -68,46 +77,109 @@ class Motion: UIViewController , CLLocationManagerDelegate {
         view.backgroundColor = UIColor.white
     }
     
-
-    // Request location access then get motion data.
+    /*
+     * Request location access then get motion data.
+     */
     override func viewDidAppear(_ animated: Bool) {
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
-
+        
+        // Request location.
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             locationManager.startUpdatingLocation()
         }
-     
-        myDeviceMotion()
-        myGyroscope()
-        myAccelerometer()
-        //in a function or viewDidLoad()
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true) // 0.1 * 150 (seg lengths) = 1.5 seconds
        
-      
-    }
-
-    // Add to data when 1.5 seconds is reached before 8.05 m for window resizing.
-    @objc func timerAction(){
-        if distanceTraveled < 8.05 {
-           // getDataForIRI()
+        
+        /*** Collect trip data *****/
+        while motionControl {
+            timer.fire()
+            
+            let currData = [CGFloat(self.speed)/CGFloat(self.velMax),CGFloat(self.yAccel),CGFloat(self.xGyro),CGFloat(self.latitude),CGFloat(self.longitude)]
+            
+            // Execute motion.
+            myDeviceMotion()
+            myGyroscope()
+            myAccelerometer()
+            
+            // Resize array at 8.05 meters or 1.50 seconds (in timerAction()).
+            if (totalDistance.truncatingRemainder(dividingBy: 8.05) == 0) {
+               // Add to (150, 5) array.
+                if (size < 150) {
+                    inner[size] = currData
+                    size += 1
+                    
+                // Add to (x, 150, 5) data array.
+                } else {
+                    data.append(inner)
+                    inner = [[CGFloat]](repeating: [0.0], count: 150)// Set inner to blank (150, 5).
+                    size = 0
+                }
+            } 
         }
     }
     
     /*
-     Navigate to showing IRI
+     * Purpose: Return (x, 150, 5) data array.
      */
-    @objc func showIRI() {
-        let newViewController = IRIView(data: tempArray)
-        self.navigationController?.pushViewController(newViewController, animated: true)
+    func getData() -> [[[CGFloat]]] {
+        return data
+    }
+    /*
+     * Purpose: Start collecting trip data.
+     */
+    func turnOnMotion() {
+        motionControl = true;
+    }
+    
+    /*
+     * Purpose: Stop collecting trip data.
+     */
+    func turnOffMotion() {
+        motionControl = false;
+    }
+    
+    /*
+     * Purpose: Add to data every 0.1 seconds.  When 1.5 seconds is reached, it is added to the (x, 150, 5) array and the window is resized and a new (150, 5) array is generated.
+     */
+    @objc func timerAction(){
+        let currData = [CGFloat(self.speed)/CGFloat(self.velMax),CGFloat(self.yAccel),CGFloat(self.xGyro),CGFloat(self.latitude),CGFloat(self.longitude)]
+        
+        // Add to (150,5) array.
+        if (size < 150) {
+            if (totalDistance.truncatingRemainder(dividingBy: 8.05) != 0) { // 1.5 seconds came first.
+                inner[size] = currData
+                size += 1
+            }
+            
+        // Add to (x,150,5) array.
+        } else { // 150 data sets - resize array. Append to data. Generate a new (150, 5) array.
+            if (totalDistance.truncatingRemainder(dividingBy: 8.05) != 0) {
+                data.append(inner)
+                inner = [[CGFloat]](repeating: [0.0], count: 150)// Set inner to blank (150, 5).
+                size = 0
+            }
+        }
         
     }
     
-  
     /*
-     Get current speed.
+     * Purpose: Return IRI to display on the screen.
+     * @return a lineChart obj
+     */
+    @objc func showIRI() -> LineChart {
+        let IRI = IRIView(data: tempArray)
+        let lineChart = IRI.getLineChart()
+        
+        return lineChart
+        
+    }
+    
+    /*
+     * Purpose: Get current speed.
+     * @return a double
      */
     func getSpeed() -> Double {
         return self.speed;
@@ -118,8 +190,12 @@ class Motion: UIViewController , CLLocationManagerDelegate {
                 last = current
                 return
         }
+        if (startLocation == nil) {
+            startLocation = current
+        }
+ 
        distanceTraveled =  last!.distance(from: current)
-      
+       totalDistance += distanceTraveled
         self.speed = current.speed
         if (self.speed < 0) {
             self.speed = distanceTraveled / (current.timestamp.timeIntervalSince(last!.timestamp))
@@ -129,17 +205,13 @@ class Motion: UIViewController , CLLocationManagerDelegate {
         last = current
      
         let velocity_temp = self.speed;
-        distanceTraveled = distanceTraveled + velocity_temp/100
-        let data = [CGFloat(self.speed)/CGFloat(self.velMax),CGFloat(self.yAccel),CGFloat(self.xGyro),CGFloat(self.latitude),CGFloat(self.longitude), CGFloat(distanceTraveled)]
+        totalDistance = totalDistance + (velocity_temp/100)
+        
+        let data = [CGFloat(self.speed)/CGFloat(self.velMax),CGFloat(self.yAccel),CGFloat(self.xGyro),CGFloat(self.latitude),CGFloat(self.longitude)]
         tempArray.append(data);
         print(distanceTraveled)
         print(tempArray)
-        print("^TempArray")
-        showIRI()
-       // if distanceTraveled >= 8.05 {
-              // showIRI()
-               
-           // }
+     
     }
         
     
@@ -163,7 +235,7 @@ class Motion: UIViewController , CLLocationManagerDelegate {
      */
     func myDeviceMotion(){
         print("Start DeviceMotion")
-        motion.deviceMotionUpdateInterval  = 1.5
+        motion.deviceMotionUpdateInterval  = 0.1
         motion.startDeviceMotionUpdates(to: OperationQueue.current!) {
             (data, error) in
             print(data as Any)
@@ -183,7 +255,7 @@ class Motion: UIViewController , CLLocationManagerDelegate {
      */
     func myGyroscope(){
         print("Start Gyroscope")
-        motion.gyroUpdateInterval = 1.5
+        motion.gyroUpdateInterval = 0.1
         motion.startGyroUpdates(to: OperationQueue.current!) {
             (data, error) in
             print(data as Any)
@@ -203,7 +275,7 @@ class Motion: UIViewController , CLLocationManagerDelegate {
      */
     func myAccelerometer() {
         print("Start Accelerometer")
-        motion.accelerometerUpdateInterval = 1.5
+        motion.accelerometerUpdateInterval = 0.1
         motion.startAccelerometerUpdates(to: OperationQueue.current!) {
             (data, error) in
             print(data as Any)

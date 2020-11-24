@@ -63,7 +63,7 @@
 		31FB5CA82538157800ABD7EE /* TripHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripHistory.swift; path = RoadXpert/TripHistory.swift; sourceTree = SOURCE_ROOT; };
 		31FB5CB3253BE2C600ABD7EE /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Motion.swift; path = RoadXpert/Motion.swift; sourceTree = SOURCE_ROOT; };
 		31FB5E7B2550EE1600ABD7EE /* IRIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRIView.swift; path = RoadXpert/IRIView.swift; sourceTree = SOURCE_ROOT; };
-		31FB5E832550EE3000ABD7EE /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		31FB5E832550EE3000ABD7EE /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineChart.swift; path = RoadXpert/LineChart.swift; sourceTree = SOURCE_ROOT; };
 		31FB5EB42550F1F400ABD7EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

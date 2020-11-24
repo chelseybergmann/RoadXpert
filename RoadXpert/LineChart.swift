@@ -49,7 +49,7 @@ open class LineChart: UIView {
     
     public struct Grid {
         public var visible: Bool = true
-        public var count: CGFloat = 10
+        public var count: CGFloat = 150
         // #eeeeee
         public var color: UIColor = UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1)
     }

@@ -10,12 +10,15 @@ import CoreMotion
 
 class RecordHistory: UIViewController {
     let motion = CMMotionManager()
+    let motionControl = Motion() // Control & get motion variables.
     var timer: Timer!
-
     
-    //var motion = CMMotionManager()
-
+    // IRI chart variables.
+    var label = UILabel()
+    var lineChart: LineChart!
+    var data = [[[CGFloat]]]()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -28,7 +31,7 @@ class RecordHistory: UIViewController {
         button1.setTitleColor(UIColor.black, for: .normal)
         button1.titleLabel?.font = UIFont.systemFont(ofSize: 25.0)
         button1.frame = CGRect(x: -10, y: 450, width: 150, height: 50)
-        button1.addTarget(self, action: #selector(record(_:)), for: .touchUpInside)
+        button1.addTarget(self, action: #selector(record(button:)), for: .touchUpInside)
         let button2 = UIButton()
         button2.setTitle("Trip History", for: .normal)
         button2.setTitleColor(UIColor.black, for: .normal)
@@ -42,25 +45,54 @@ class RecordHistory: UIViewController {
     
     
     /*
-     Record the trip.
+     Record the trip. Gets motion variables and displays IRI.
      */
-    @objc func record(_ :UIButton!) {
-        self.navigationController?.pushViewController(Motion(), animated: true)
+    @objc func record(button :UIButton!) {
+        if (button.currentTitle == "Record") {
+            
+            button.setTitle("End Trip", for: .normal)
+         
         
-        
-        let date = Date() // Get current date
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM.dd.yy"
-        let result = formatter.string(from: date)
-        
-        let calendar = Calendar.current // Get current time.
-        let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
-        let time = String(hour) + ":" + String(minutes)
-        
-       // Add date and time to history of trips.
-       History().addCell(date: result, time: time)
-        
+            /************IRI VIEW *************/
+            motionControl.turnOnMotion() // Being processing motion.
+            self.lineChart = motionControl.showIRI() // Display real-time IRI.
+            var views: [String: AnyObject] = [:]
+            
+            label.text = "IRI"
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.textAlignment = NSTextAlignment.center
+            self.view.addSubview(label)
+            views["label"] = label
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[label]-|", options: [], metrics: nil, views: views))
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-80-[label]", options: [], metrics: nil, views: views))
+            
+            self.view.addSubview(lineChart)
+            views["chart"] = lineChart
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[chart]-|", options: [], metrics: nil, views: views))
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[label]-[chart(==200)]", options: [], metrics: nil, views: views))
+            /********************************************/
+            
+            let date = Date() // Get current date
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM.dd.yy"
+            let result = formatter.string(from: date)
+            
+            let calendar = Calendar.current // Get current time.
+            let hour = calendar.component(.hour, from: date)
+            let minutes = calendar.component(.minute, from: date)
+            let time = String(hour) + ":" + String(minutes)
+            
+           // Add date and time to history of trips, a singleton.
+           History().addCell(date: result, time: time)
+            
+        // Add to firebase. ****
+            
+            // End Trip.
+        } else {
+            motionControl.turnOffMotion()
+            data = motionControl.getData()
+            print(data)
+        }
     }
     
     /*
