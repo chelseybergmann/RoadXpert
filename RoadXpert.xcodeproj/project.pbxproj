@@ -3,18 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		31BFC27F2585E6FB00BB686B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC27E2585E6FB00BB686B /* AppDelegate.swift */; };
 		31BFC2812585E6FB00BB686B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC2802585E6FB00BB686B /* SceneDelegate.swift */; };
-		31BFC2832585E6FB00BB686B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC2822585E6FB00BB686B /* ViewController.swift */; };
 		31BFC2862585E6FB00BB686B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31BFC2842585E6FB00BB686B /* Main.storyboard */; };
 		31BFC2882585E6FE00BB686B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31BFC2872585E6FE00BB686B /* Assets.xcassets */; };
 		31BFC28B2585E6FE00BB686B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31BFC2892585E6FE00BB686B /* LaunchScreen.storyboard */; };
 		31BFC2962585E6FE00BB686B /* RoadXpertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC2952585E6FE00BB686B /* RoadXpertTests.swift */; };
 		31BFC2A12585E6FE00BB686B /* RoadXpertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC2A02585E6FE00BB686B /* RoadXpertUITests.swift */; };
+		31BFC2B22585EF6A00BB686B /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC2B12585EF6A00BB686B /* Record.swift */; };
+		31BFC2C025862CB600BB686B /* AllHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC2BF25862CB600BB686B /* AllHistory.swift */; };
+		31BFC2C82586324300BB686B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31BFC2C72586324200BB686B /* GoogleService-Info.plist */; };
+		31BFC2CE258644BD00BB686B /* FirebaseAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2CD258644BD00BB686B /* FirebaseAnalytics.xcframework */; };
+		31BFC2D3258644C400BB686B /* FirebaseCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2D2258644C400BB686B /* FirebaseCore.xcframework */; };
+		31BFC2E2258644D500BB686B /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2E1258644D500BB686B /* GoogleAppMeasurement.xcframework */; };
+		31BFC2E7258644DE00BB686B /* GoogleDataTransport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2E6258644DE00BB686B /* GoogleDataTransport.xcframework */; };
+		31BFC2EC258644E500BB686B /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2EB258644E500BB686B /* GoogleUtilities.xcframework */; };
+		31BFC2F1258644ED00BB686B /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2F0258644ED00BB686B /* nanopb.xcframework */; };
+		31BFC2F62586450100BB686B /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2F52586450100BB686B /* PromisesObjC.xcframework */; };
+		31BFC30A258649DE00BB686B /* FirebaseCoreDiagnostics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC309258649DE00BB686B /* FirebaseCoreDiagnostics.xcframework */; };
+		31BFC31825866AFD00BB686B /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC31725866AFD00BB686B /* Motion.swift */; };
+		31BFC32825869C4700BB686B /* m2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC32725869C4600BB686B /* m2.mlmodel */; };
+		31BFC32D25869C5F00BB686B /* m3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC32C25869C5F00BB686B /* m3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +51,6 @@
 		31BFC27B2585E6FB00BB686B /* RoadXpert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadXpert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BFC27E2585E6FB00BB686B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31BFC2802585E6FB00BB686B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		31BFC2822585E6FB00BB686B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		31BFC2852585E6FB00BB686B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31BFC2872585E6FE00BB686B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31BFC28A2585E6FE00BB686B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +61,22 @@
 		31BFC29C2585E6FE00BB686B /* RoadXpertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoadXpertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BFC2A02585E6FE00BB686B /* RoadXpertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadXpertUITests.swift; sourceTree = "<group>"; };
 		31BFC2A22585E6FE00BB686B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31BFC2B12585EF6A00BB686B /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		31BFC2BF25862CB600BB686B /* AllHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHistory.swift; sourceTree = "<group>"; };
+		31BFC2C72586324200BB686B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		31BFC2CD258644BD00BB686B /* FirebaseAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseAnalytics.xcframework; sourceTree = "<group>"; };
+		31BFC2D2258644C400BB686B /* FirebaseCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCore.xcframework; sourceTree = "<group>"; };
+		31BFC2E1258644D500BB686B /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
+		31BFC2E6258644DE00BB686B /* GoogleDataTransport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleDataTransport.xcframework; sourceTree = "<group>"; };
+		31BFC2EB258644E500BB686B /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
+		31BFC2F0258644ED00BB686B /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
+		31BFC2F52586450100BB686B /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
+		31BFC2FA2586479400BB686B /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		31BFC3022586487400BB686B /* FirebaseInstallations.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseInstallations.xcframework; sourceTree = "<group>"; };
+		31BFC309258649DE00BB686B /* FirebaseCoreDiagnostics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCoreDiagnostics.xcframework; sourceTree = "<group>"; };
+		31BFC31725866AFD00BB686B /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
+		31BFC32725869C4600BB686B /* m2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = m2.mlmodel; sourceTree = "<group>"; };
+		31BFC32C25869C5F00BB686B /* m3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = m3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31BFC2F62586450100BB686B /* PromisesObjC.xcframework in Frameworks */,
+				31BFC2E7258644DE00BB686B /* GoogleDataTransport.xcframework in Frameworks */,
+				31BFC2CE258644BD00BB686B /* FirebaseAnalytics.xcframework in Frameworks */,
+				31BFC2EC258644E500BB686B /* GoogleUtilities.xcframework in Frameworks */,
+				31BFC30A258649DE00BB686B /* FirebaseCoreDiagnostics.xcframework in Frameworks */,
+				31BFC2E2258644D500BB686B /* GoogleAppMeasurement.xcframework in Frameworks */,
+				31BFC2D3258644C400BB686B /* FirebaseCore.xcframework in Frameworks */,
+				31BFC2F1258644ED00BB686B /* nanopb.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				31BFC27D2585E6FB00BB686B /* RoadXpert */,
+				31BFC2CC2586448A00BB686B /* Firebase */,
 				31BFC2942585E6FE00BB686B /* RoadXpertTests */,
 				31BFC29F2585E6FE00BB686B /* RoadXpertUITests */,
 				31BFC27C2585E6FB00BB686B /* Products */,
@@ -99,13 +136,18 @@
 		31BFC27D2585E6FB00BB686B /* RoadXpert */ = {
 			isa = PBXGroup;
 			children = (
+				31BFC33125869C7200BB686B /* Core Model */,
 				31BFC27E2585E6FB00BB686B /* AppDelegate.swift */,
 				31BFC2802585E6FB00BB686B /* SceneDelegate.swift */,
-				31BFC2822585E6FB00BB686B /* ViewController.swift */,
 				31BFC2842585E6FB00BB686B /* Main.storyboard */,
 				31BFC2872585E6FE00BB686B /* Assets.xcassets */,
 				31BFC2892585E6FE00BB686B /* LaunchScreen.storyboard */,
 				31BFC28C2585E6FE00BB686B /* Info.plist */,
+				31BFC2B12585EF6A00BB686B /* Record.swift */,
+				31BFC2BF25862CB600BB686B /* AllHistory.swift */,
+				31BFC2C72586324200BB686B /* GoogleService-Info.plist */,
+				31BFC2FA2586479400BB686B /* Firebase.h */,
+				31BFC31725866AFD00BB686B /* Motion.swift */,
 			);
 			path = RoadXpert;
 			sourceTree = "<group>";
@@ -126,6 +168,31 @@
 				31BFC2A22585E6FE00BB686B /* Info.plist */,
 			);
 			path = RoadXpertUITests;
+			sourceTree = "<group>";
+		};
+		31BFC2CC2586448A00BB686B /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				31BFC2F52586450100BB686B /* PromisesObjC.xcframework */,
+				31BFC2EB258644E500BB686B /* GoogleUtilities.xcframework */,
+				31BFC2E6258644DE00BB686B /* GoogleDataTransport.xcframework */,
+				31BFC2CD258644BD00BB686B /* FirebaseAnalytics.xcframework */,
+				31BFC309258649DE00BB686B /* FirebaseCoreDiagnostics.xcframework */,
+				31BFC2E1258644D500BB686B /* GoogleAppMeasurement.xcframework */,
+				31BFC2D2258644C400BB686B /* FirebaseCore.xcframework */,
+				31BFC2F0258644ED00BB686B /* nanopb.xcframework */,
+				31BFC3022586487400BB686B /* FirebaseInstallations.xcframework */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		31BFC33125869C7200BB686B /* Core Model */ = {
+			isa = PBXGroup;
+			children = (
+				31BFC32C25869C5F00BB686B /* m3.mlmodel */,
+				31BFC32725869C4600BB686B /* m2.mlmodel */,
+			);
+			path = "Core Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31BFC28B2585E6FE00BB686B /* LaunchScreen.storyboard in Resources */,
+				31BFC2C82586324300BB686B /* GoogleService-Info.plist in Resources */,
 				31BFC2882585E6FE00BB686B /* Assets.xcassets in Resources */,
 				31BFC2862585E6FB00BB686B /* Main.storyboard in Resources */,
 			);
@@ -258,9 +326,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31BFC2832585E6FB00BB686B /* ViewController.swift in Sources */,
+				31BFC2B22585EF6A00BB686B /* Record.swift in Sources */,
+				31BFC31825866AFD00BB686B /* Motion.swift in Sources */,
+				31BFC32D25869C5F00BB686B /* m3.mlmodel in Sources */,
+				31BFC32825869C4700BB686B /* m2.mlmodel in Sources */,
 				31BFC27F2585E6FB00BB686B /* AppDelegate.swift in Sources */,
 				31BFC2812585E6FB00BB686B /* SceneDelegate.swift in Sources */,
+				31BFC2C025862CB600BB686B /* AllHistory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +534,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.RoadXpert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
