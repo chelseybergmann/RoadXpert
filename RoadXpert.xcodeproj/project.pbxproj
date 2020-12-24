@@ -28,6 +28,8 @@
 		31BFC31825866AFD00BB686B /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC31725866AFD00BB686B /* Motion.swift */; };
 		31BFC32825869C4700BB686B /* m2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC32725869C4600BB686B /* m2.mlmodel */; };
 		31BFC32D25869C5F00BB686B /* m3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC32C25869C5F00BB686B /* m3.mlmodel */; };
+		31BFC340258BEFB300BB686B /* CoreMLTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC33F258BEFB300BB686B /* CoreMLTest.swift */; };
+		31BFC34B25941B0000BB686B /* locationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC34A25941B0000BB686B /* locationDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		31BFC31725866AFD00BB686B /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
 		31BFC32725869C4600BB686B /* m2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = m2.mlmodel; sourceTree = "<group>"; };
 		31BFC32C25869C5F00BB686B /* m3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = m3.mlmodel; sourceTree = "<group>"; };
+		31BFC33F258BEFB300BB686B /* CoreMLTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLTest.swift; sourceTree = "<group>"; };
+		31BFC34A25941B0000BB686B /* locationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 			children = (
 				31BFC33125869C7200BB686B /* Core Model */,
 				31BFC27E2585E6FB00BB686B /* AppDelegate.swift */,
+				31BFC34A25941B0000BB686B /* locationDelegate.swift */,
 				31BFC2802585E6FB00BB686B /* SceneDelegate.swift */,
 				31BFC2842585E6FB00BB686B /* Main.storyboard */,
 				31BFC2872585E6FE00BB686B /* Assets.xcassets */,
@@ -146,7 +151,6 @@
 				31BFC2B12585EF6A00BB686B /* Record.swift */,
 				31BFC2BF25862CB600BB686B /* AllHistory.swift */,
 				31BFC2C72586324200BB686B /* GoogleService-Info.plist */,
-				31BFC2FA2586479400BB686B /* Firebase.h */,
 				31BFC31725866AFD00BB686B /* Motion.swift */,
 			);
 			path = RoadXpert;
@@ -173,6 +177,7 @@
 		31BFC2CC2586448A00BB686B /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				31BFC2FA2586479400BB686B /* Firebase.h */,
 				31BFC2F52586450100BB686B /* PromisesObjC.xcframework */,
 				31BFC2EB258644E500BB686B /* GoogleUtilities.xcframework */,
 				31BFC2E6258644DE00BB686B /* GoogleDataTransport.xcframework */,
@@ -190,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				31BFC32C25869C5F00BB686B /* m3.mlmodel */,
+				31BFC33F258BEFB300BB686B /* CoreMLTest.swift */,
 				31BFC32725869C4600BB686B /* m2.mlmodel */,
 			);
 			path = "Core Model";
@@ -327,10 +333,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				31BFC2B22585EF6A00BB686B /* Record.swift in Sources */,
+				31BFC34B25941B0000BB686B /* locationDelegate.swift in Sources */,
 				31BFC31825866AFD00BB686B /* Motion.swift in Sources */,
 				31BFC32D25869C5F00BB686B /* m3.mlmodel in Sources */,
 				31BFC32825869C4700BB686B /* m2.mlmodel in Sources */,
 				31BFC27F2585E6FB00BB686B /* AppDelegate.swift in Sources */,
+				31BFC340258BEFB300BB686B /* CoreMLTest.swift in Sources */,
 				31BFC2812585E6FB00BB686B /* SceneDelegate.swift in Sources */,
 				31BFC2C025862CB600BB686B /* AllHistory.swift in Sources */,
 			);
@@ -515,7 +523,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.RoadXpert;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.RoadXpertApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -535,7 +543,7 @@
 					"@executable_path/Frameworks",
 				);
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.RoadXpert;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.RoadXpertApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -97,10 +97,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qm2-Bz-Rce">
                                 <rect key="frame" x="30" y="343" width="241" height="53"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="53" id="3DY-TE-yqT"/>
                                     <constraint firstAttribute="width" constant="241" id="3IT-Ce-JbB"/>
                                     <constraint firstAttribute="height" constant="53" id="5ii-dd-8MM"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="53" id="gql-Y3-R41"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="All Trips">
@@ -213,7 +211,7 @@
                                     <color key="titleColor" systemColor="systemRedColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="turnOffMotion:" destination="sgF-j7-dJT" eventType="touchUpInside" id="BiQ-Zb-TdG"/>
+                                    <action selector="endTrip:" destination="sgF-j7-dJT" eventType="touchUpInside" id="bpz-wF-zaz"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="den-HM-DNl">
@@ -244,8 +242,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="KEs-lq-glb"/>
                     <connections>
-                        <outlet property="tripHistoryBtn" destination="den-HM-DNl" id="YKv-Tp-wdw"/>
-                        <outlet property="watchLabel" destination="F4q-Xj-gfl" id="kXx-wg-eqf"/>
+                        <outlet property="watchLabel" destination="F4q-Xj-gfl" id="IKT-QY-EW4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="noR-db-adH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
