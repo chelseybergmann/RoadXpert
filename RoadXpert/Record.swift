@@ -9,6 +9,7 @@ import Foundation
 import CoreMotion
 import CoreLocation
 import MapKit
+import CoreML
 
 class Record: UIViewController {
    // Declare a CLLocationManager object at the ViewController level to prevent the instance from being released by system.
@@ -20,7 +21,7 @@ class Record: UIViewController {
     var distanceTemp = 0.0
     
     var currData = [Double]()
-    var data = [[Double]]()
+    var data = [[[Double]]]()
     var tempArray = [[Double]]()
     
     var latitude = CLLocationDegrees()
@@ -62,6 +63,11 @@ class Record: UIViewController {
         self.motion.stopGyroUpdates()
         self.motion.stopAccelerometerUpdates()
         self.timer.invalidate()
+        
+        print("DATA: ")
+        print(data)
+        print(data.count)
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -99,34 +105,84 @@ class Record: UIViewController {
         self.counterTemp += 0.01
         self.watchLabel.text = String(format: "%.2f", self.counter)
         
-        if (distanceTemp >= 8.05 || self.counterTemp >= 1.5) {
+        if (distanceTemp >= 8.05 || self.counterTemp >= 1.5) || (distanceTemp >= 8.05 && self.counterTemp >= 1.5) { //8.05 m or/and 1.5 sec reached.
             print("COUNTER TEMP: ")
             print(counterTemp)
             counterTemp = 0.0
+            distanceTemp = 0.0
+            
             // 8.05m or 1.5 sec for resizing.
-            var outputTemp = [[Double](repeating:0.0, count: 3)] //150 x 3 or less than 150 x 3
-            if (speed > 0) {
-            for i in 0...tempArray.count-1 {
-                outputTemp.append(Array(tempArray[i][0..<3]))
+            var outputTemp = [[Double]]() //150 x 3 or less than 150 x 3
+            if (speed > -1) { // Speed is accurate for data.
+                for i in 0...tempArray.count-1 {
+                    print(String(speed) + " SPEED")
+                    let currLatitude = tempArray[i][3]
+                    let currLongitude = tempArray[i][4]
+                    outputTemp.append(Array(tempArray[i][0..<3])) //outputTemp = IRI input
+                }
+                data.append(outputTemp)
+                
+                let iriOutput = calcIRI(outputTemp) // Single double value
+                print("IRI OUTPUT:")
+                print(iriOutput)
+                
+                
+                
+                // IRI/model prediction here
+                // Final output (IRI, latitude, longitude)
+                
             }
-        }
             print("OUTPUT TEMP:")
             print(outputTemp)
             print("OUTPUT TEMP COUNT: ")
             print(outputTemp.count)
-            // IRI/model prediction here
-            // Final output (IRI, latitude, longitude)
-            tempArray = [[Double]]()
+            
+            
+            tempArray = [[Double]]() // Clear curr data for next use.
         }
+        
+        // Constantly add data to the temp array of data until 8.05m or 1.5 sec.
         if (self.speed >= 0) { // Accurate speed.
             self.currData = [self.speed/25, self.yAccel, self.xGyro, self.latitude, self.longitude]
             tempArray.append(currData)
-            data.append(currData)
+     
             print(totalDistance)
             print("CURRENT DATA")
             print(self.currData)
+
         }
     }
+    func calcIRI(_ input: [[Double]]) -> MLMultiArray {
+        do {
+            let model: m3 = try m3(configuration: MLModelConfiguration())
+            let iriInput = convertToMLArray(input)
+            let iriOutput = try model.prediction(input1: iriInput) // Prediction.
+            return iriOutput.output1
+            //print("IRI OUTPUT: ")
+            //print(iriOutput.output1)
+            // more code here
+        } catch {
+            print("ERROR:")
+            print(error)
+            exit(0)
+        }
+     
+    }
+    
+    /*
+        Convert x, 150,3 array to a multi array type for Core Model.
+     */
+    func convertToMLArray(_ input: [[Double]]) -> MLMultiArray {
+        let finalData = input.reduce([], +) //result is of type [Double] with x, <= 150, 3 elements
+        guard let mlMultiArray = try? MLMultiArray(shape:[1, NSNumber(value: input.count), 3], dataType:MLMultiArrayDataType.int32) else {
+            fatalError("Unexpected runtime error. MLMultiArray")
+        }
+        for (index, element) in finalData.enumerated() {
+            mlMultiArray[index] = NSNumber(value: element)
+        }
+        
+        return mlMultiArray
+        }
 }
     
   // Step 5: Implement the CLLocationManagerDelegate to handle the callback from CLLocationManager
