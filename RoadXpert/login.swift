@@ -7,22 +7,23 @@
 
 import Foundation
 import UIKit
-import Firebase
 
 class Login: UIViewController {
-    var handle = Auth.auth()
+//    var handle = Auth.auth()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+     //   handle = Auth.auth().addStateDidChangeListener { (auth, user) in
           // ...
-        } as! Auth
+       // } as! Auth
 
         
         }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        Auth.auth().removeStateDidChangeListener(handle)
+//Auth.auth().removeStateDidChangeListener(handle)
+        let val = 5.0 + 10
+        
     }
 }

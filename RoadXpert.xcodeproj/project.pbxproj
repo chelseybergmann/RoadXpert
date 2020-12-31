@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		157AE2E3448ECB7F05EE0653 /* Pods_RoadXpert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5614F635D054EBDBC0E7C3C5 /* Pods_RoadXpert.framework */; };
-		1E578A290B8952B4CB0044B9 /* Pods_RoadXpert_RoadXpertUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A299D2703C7253710627FF /* Pods_RoadXpert_RoadXpertUITests.framework */; };
 		31BFC27F2585E6FB00BB686B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC27E2585E6FB00BB686B /* AppDelegate.swift */; };
 		31BFC2812585E6FB00BB686B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC2802585E6FB00BB686B /* SceneDelegate.swift */; };
 		31BFC2862585E6FB00BB686B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31BFC2842585E6FB00BB686B /* Main.storyboard */; };
@@ -19,14 +17,6 @@
 		31BFC2B22585EF6A00BB686B /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC2B12585EF6A00BB686B /* Record.swift */; };
 		31BFC2C025862CB600BB686B /* AllHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC2BF25862CB600BB686B /* AllHistory.swift */; };
 		31BFC2C82586324300BB686B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31BFC2C72586324200BB686B /* GoogleService-Info.plist */; };
-		31BFC2CE258644BD00BB686B /* FirebaseAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2CD258644BD00BB686B /* FirebaseAnalytics.xcframework */; };
-		31BFC2D3258644C400BB686B /* FirebaseCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2D2258644C400BB686B /* FirebaseCore.xcframework */; };
-		31BFC2E2258644D500BB686B /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2E1258644D500BB686B /* GoogleAppMeasurement.xcframework */; };
-		31BFC2E7258644DE00BB686B /* GoogleDataTransport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2E6258644DE00BB686B /* GoogleDataTransport.xcframework */; };
-		31BFC2EC258644E500BB686B /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2EB258644E500BB686B /* GoogleUtilities.xcframework */; };
-		31BFC2F1258644ED00BB686B /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2F0258644ED00BB686B /* nanopb.xcframework */; };
-		31BFC2F62586450100BB686B /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC2F52586450100BB686B /* PromisesObjC.xcframework */; };
-		31BFC30A258649DE00BB686B /* FirebaseCoreDiagnostics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BFC309258649DE00BB686B /* FirebaseCoreDiagnostics.xcframework */; };
 		31BFC31825866AFD00BB686B /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC31725866AFD00BB686B /* Motion.swift */; };
 		31BFC32825869C4700BB686B /* m2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC32725869C4600BB686B /* m2.mlmodel */; };
 		31BFC32D25869C5F00BB686B /* m3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC32C25869C5F00BB686B /* m3.mlmodel */; };
@@ -34,7 +24,8 @@
 		31BFC34B25941B0000BB686B /* locationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC34A25941B0000BB686B /* locationDelegate.swift */; };
 		31E8D1EC259A16190014225B /* model3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31E8D1EA259A16190014225B /* model3.xcdatamodeld */; };
 		31E8D206259A69060014225B /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E8D205259A69060014225B /* login.swift */; };
-		7CD688C9DD36A2F3BB54CBF7 /* Pods_RoadXpertTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33793BC06FA7C89F0300AD46 /* Pods_RoadXpertTests.framework */; };
+		393747100297CE97F7C8CB6D /* Pods_RoadXpert_RoadXpertUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB91AB2D0A7C93B80611F825 /* Pods_RoadXpert_RoadXpertUITests.framework */; };
+		C6965BE8ED37A18FE75B7322 /* Pods_RoadXpertTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95488C9F8F9F79AA651B5C5 /* Pods_RoadXpertTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,18 +45,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		311F0979259E3085003E1B07 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0655292382F0B9C6AEA6AA59 /* Pods-RoadXpert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadXpert.debug.xcconfig"; path = "Target Support Files/Pods-RoadXpert/Pods-RoadXpert.debug.xcconfig"; sourceTree = "<group>"; };
-		07B6B5E9C9AEB04A4CBFDC41 /* Pods-RoadXpertTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadXpertTests.debug.xcconfig"; path = "Target Support Files/Pods-RoadXpertTests/Pods-RoadXpertTests.debug.xcconfig"; sourceTree = "<group>"; };
-		10A299D2703C7253710627FF /* Pods_RoadXpert_RoadXpertUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadXpert_RoadXpertUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		240741B962B7103F6499C357 /* Pods-RoadXpertTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadXpertTests.release.xcconfig"; path = "Target Support Files/Pods-RoadXpertTests/Pods-RoadXpertTests.release.xcconfig"; sourceTree = "<group>"; };
+		2306EA34F66D30901C599E89 /* Pods-RoadXpert-RoadXpertUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadXpert-RoadXpertUITests.debug.xcconfig"; path = "Target Support Files/Pods-RoadXpert-RoadXpertUITests/Pods-RoadXpert-RoadXpertUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		31BFC27B2585E6FB00BB686B /* RoadXpert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadXpert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BFC27E2585E6FB00BB686B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31BFC2802585E6FB00BB686B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		31BFC2852585E6FB00BB686B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31BFC2872585E6FE00BB686B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31BFC28A2585E6FE00BB686B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		31BFC28C2585E6FE00BB686B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31BFC28C2585E6FE00BB686B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = RoadXpert/Info.plist; sourceTree = SOURCE_ROOT; };
 		31BFC2912585E6FE00BB686B /* RoadXpertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoadXpertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BFC2952585E6FE00BB686B /* RoadXpertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadXpertTests.swift; sourceTree = "<group>"; };
 		31BFC2972585E6FE00BB686B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,16 +76,6 @@
 		31BFC2B12585EF6A00BB686B /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		31BFC2BF25862CB600BB686B /* AllHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHistory.swift; sourceTree = "<group>"; };
 		31BFC2C72586324200BB686B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		31BFC2CD258644BD00BB686B /* FirebaseAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseAnalytics.xcframework; sourceTree = "<group>"; };
-		31BFC2D2258644C400BB686B /* FirebaseCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCore.xcframework; sourceTree = "<group>"; };
-		31BFC2E1258644D500BB686B /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
-		31BFC2E6258644DE00BB686B /* GoogleDataTransport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleDataTransport.xcframework; sourceTree = "<group>"; };
-		31BFC2EB258644E500BB686B /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
-		31BFC2F0258644ED00BB686B /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
-		31BFC2F52586450100BB686B /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
-		31BFC2FA2586479400BB686B /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
-		31BFC3022586487400BB686B /* FirebaseInstallations.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseInstallations.xcframework; sourceTree = "<group>"; };
-		31BFC309258649DE00BB686B /* FirebaseCoreDiagnostics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCoreDiagnostics.xcframework; sourceTree = "<group>"; };
 		31BFC31725866AFD00BB686B /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
 		31BFC32725869C4600BB686B /* m2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = m2.mlmodel; sourceTree = "<group>"; };
 		31BFC32C25869C5F00BB686B /* m3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = m3.mlmodel; sourceTree = "<group>"; };
@@ -92,11 +83,14 @@
 		31BFC34A25941B0000BB686B /* locationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationDelegate.swift; sourceTree = "<group>"; };
 		31E8D1EB259A16190014225B /* model3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = model3.xcdatamodel; sourceTree = "<group>"; };
 		31E8D205259A69060014225B /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
-		33793BC06FA7C89F0300AD46 /* Pods_RoadXpertTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadXpertTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5614F635D054EBDBC0E7C3C5 /* Pods_RoadXpert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadXpert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BD9F8240D1E9EABF7FEAE5A /* Pods-RoadXpert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadXpert.release.xcconfig"; path = "Target Support Files/Pods-RoadXpert/Pods-RoadXpert.release.xcconfig"; sourceTree = "<group>"; };
-		A7781B69A3D789F626A5900B /* Pods-RoadXpert-RoadXpertUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadXpert-RoadXpertUITests.debug.xcconfig"; path = "Target Support Files/Pods-RoadXpert-RoadXpertUITests/Pods-RoadXpert-RoadXpertUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		B9E71D9208404B6D280DFDF4 /* Pods-RoadXpert-RoadXpertUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadXpert-RoadXpertUITests.release.xcconfig"; path = "Target Support Files/Pods-RoadXpert-RoadXpertUITests/Pods-RoadXpert-RoadXpertUITests.release.xcconfig"; sourceTree = "<group>"; };
+		649E11945D8C0DB9E3BE22F6 /* Pods-RoadXpertTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadXpertTests.release.xcconfig"; path = "Target Support Files/Pods-RoadXpertTests/Pods-RoadXpertTests.release.xcconfig"; sourceTree = "<group>"; };
+		6C3D43151400D9BE6A4027D2 /* Pods-RoadXpertTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadXpertTests.debug.xcconfig"; path = "Target Support Files/Pods-RoadXpertTests/Pods-RoadXpertTests.debug.xcconfig"; sourceTree = "<group>"; };
+		80448B53263BC46DF08768C0 /* Pods-RoadXpert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadXpert.debug.xcconfig"; path = "Target Support Files/Pods-RoadXpert/Pods-RoadXpert.debug.xcconfig"; sourceTree = "<group>"; };
+		A95488C9F8F9F79AA651B5C5 /* Pods_RoadXpertTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadXpertTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB91AB2D0A7C93B80611F825 /* Pods_RoadXpert_RoadXpertUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadXpert_RoadXpertUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4618EB42372E6BB35064A36 /* Pods_RoadXpert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadXpert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7F9AC6E2DD1F6F2C24A7105 /* Pods-RoadXpert-RoadXpertUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadXpert-RoadXpertUITests.release.xcconfig"; path = "Target Support Files/Pods-RoadXpert-RoadXpertUITests/Pods-RoadXpert-RoadXpertUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FB26C01DF3D65FD9B9841147 /* Pods-RoadXpert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadXpert.release.xcconfig"; path = "Target Support Files/Pods-RoadXpert/Pods-RoadXpert.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,15 +98,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31BFC2F62586450100BB686B /* PromisesObjC.xcframework in Frameworks */,
-				31BFC2E7258644DE00BB686B /* GoogleDataTransport.xcframework in Frameworks */,
-				31BFC2CE258644BD00BB686B /* FirebaseAnalytics.xcframework in Frameworks */,
-				31BFC2EC258644E500BB686B /* GoogleUtilities.xcframework in Frameworks */,
-				31BFC30A258649DE00BB686B /* FirebaseCoreDiagnostics.xcframework in Frameworks */,
-				31BFC2E2258644D500BB686B /* GoogleAppMeasurement.xcframework in Frameworks */,
-				31BFC2D3258644C400BB686B /* FirebaseCore.xcframework in Frameworks */,
-				31BFC2F1258644ED00BB686B /* nanopb.xcframework in Frameworks */,
-				157AE2E3448ECB7F05EE0653 /* Pods_RoadXpert.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CD688C9DD36A2F3BB54CBF7 /* Pods_RoadXpertTests.framework in Frameworks */,
+				C6965BE8ED37A18FE75B7322 /* Pods_RoadXpertTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E578A290B8952B4CB0044B9 /* Pods_RoadXpert_RoadXpertUITests.framework in Frameworks */,
+				393747100297CE97F7C8CB6D /* Pods_RoadXpert_RoadXpertUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,12 +124,11 @@
 			isa = PBXGroup;
 			children = (
 				31BFC27D2585E6FB00BB686B /* RoadXpert */,
-				31BFC2CC2586448A00BB686B /* Firebase */,
 				31BFC2942585E6FE00BB686B /* RoadXpertTests */,
 				31BFC29F2585E6FE00BB686B /* RoadXpertUITests */,
 				31BFC27C2585E6FB00BB686B /* Products */,
-				DEDAECE99E16B7A032D8D54E /* Pods */,
-				C1989147C7EF79B6DA968F78 /* Frameworks */,
+				F7A0FB8D4E2F75AB3E11C65C /* Pods */,
+				7D28118A9B2679319B91E505 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,23 +180,6 @@
 			path = RoadXpertUITests;
 			sourceTree = "<group>";
 		};
-		31BFC2CC2586448A00BB686B /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				31BFC2FA2586479400BB686B /* Firebase.h */,
-				31BFC2F52586450100BB686B /* PromisesObjC.xcframework */,
-				31BFC2EB258644E500BB686B /* GoogleUtilities.xcframework */,
-				31BFC2E6258644DE00BB686B /* GoogleDataTransport.xcframework */,
-				31BFC2CD258644BD00BB686B /* FirebaseAnalytics.xcframework */,
-				31BFC309258649DE00BB686B /* FirebaseCoreDiagnostics.xcframework */,
-				31BFC2E1258644D500BB686B /* GoogleAppMeasurement.xcframework */,
-				31BFC2D2258644C400BB686B /* FirebaseCore.xcframework */,
-				31BFC2F0258644ED00BB686B /* nanopb.xcframework */,
-				31BFC3022586487400BB686B /* FirebaseInstallations.xcframework */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
 		31BFC33125869C7200BB686B /* Core Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,25 +191,25 @@
 			path = "Core Model";
 			sourceTree = "<group>";
 		};
-		C1989147C7EF79B6DA968F78 /* Frameworks */ = {
+		7D28118A9B2679319B91E505 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5614F635D054EBDBC0E7C3C5 /* Pods_RoadXpert.framework */,
-				10A299D2703C7253710627FF /* Pods_RoadXpert_RoadXpertUITests.framework */,
-				33793BC06FA7C89F0300AD46 /* Pods_RoadXpertTests.framework */,
+				D4618EB42372E6BB35064A36 /* Pods_RoadXpert.framework */,
+				BB91AB2D0A7C93B80611F825 /* Pods_RoadXpert_RoadXpertUITests.framework */,
+				A95488C9F8F9F79AA651B5C5 /* Pods_RoadXpertTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DEDAECE99E16B7A032D8D54E /* Pods */ = {
+		F7A0FB8D4E2F75AB3E11C65C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0655292382F0B9C6AEA6AA59 /* Pods-RoadXpert.debug.xcconfig */,
-				8BD9F8240D1E9EABF7FEAE5A /* Pods-RoadXpert.release.xcconfig */,
-				A7781B69A3D789F626A5900B /* Pods-RoadXpert-RoadXpertUITests.debug.xcconfig */,
-				B9E71D9208404B6D280DFDF4 /* Pods-RoadXpert-RoadXpertUITests.release.xcconfig */,
-				07B6B5E9C9AEB04A4CBFDC41 /* Pods-RoadXpertTests.debug.xcconfig */,
-				240741B962B7103F6499C357 /* Pods-RoadXpertTests.release.xcconfig */,
+				80448B53263BC46DF08768C0 /* Pods-RoadXpert.debug.xcconfig */,
+				FB26C01DF3D65FD9B9841147 /* Pods-RoadXpert.release.xcconfig */,
+				2306EA34F66D30901C599E89 /* Pods-RoadXpert-RoadXpertUITests.debug.xcconfig */,
+				E7F9AC6E2DD1F6F2C24A7105 /* Pods-RoadXpert-RoadXpertUITests.release.xcconfig */,
+				6C3D43151400D9BE6A4027D2 /* Pods-RoadXpertTests.debug.xcconfig */,
+				649E11945D8C0DB9E3BE22F6 /* Pods-RoadXpertTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -254,11 +221,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31BFC2A52585E6FE00BB686B /* Build configuration list for PBXNativeTarget "RoadXpert" */;
 			buildPhases = (
-				CAC5644A527C0B39D5BF7377 /* [CP] Check Pods Manifest.lock */,
+				1E6265638452750F48DFF026 /* [CP] Check Pods Manifest.lock */,
 				31BFC2772585E6FB00BB686B /* Sources */,
 				31BFC2782585E6FB00BB686B /* Frameworks */,
 				31BFC2792585E6FB00BB686B /* Resources */,
-				0C06C666A938F4D609F83484 /* [CP] Embed Pods Frameworks */,
+				311F0979259E3085003E1B07 /* Embed Frameworks */,
+				D888C3605DC6C09110B0CBC1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,7 +241,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31BFC2A82585E6FE00BB686B /* Build configuration list for PBXNativeTarget "RoadXpertTests" */;
 			buildPhases = (
-				FA47A500BFFB2E3D675BD226 /* [CP] Check Pods Manifest.lock */,
+				27F712B80DC817A8661018F1 /* [CP] Check Pods Manifest.lock */,
 				31BFC28D2585E6FE00BB686B /* Sources */,
 				31BFC28E2585E6FE00BB686B /* Frameworks */,
 				31BFC28F2585E6FE00BB686B /* Resources */,
@@ -292,11 +260,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31BFC2AB2585E6FE00BB686B /* Build configuration list for PBXNativeTarget "RoadXpertUITests" */;
 			buildPhases = (
-				CB0D56302E5C0E3F9FD0407D /* [CP] Check Pods Manifest.lock */,
+				A03888D8F44DAE03C635BDE7 /* [CP] Check Pods Manifest.lock */,
 				31BFC2982585E6FE00BB686B /* Sources */,
 				31BFC2992585E6FE00BB686B /* Frameworks */,
 				31BFC29A2585E6FE00BB686B /* Resources */,
-				A8D0D07C33744E70D025047E /* [CP] Embed Pods Frameworks */,
+				C8B4B5D6C56B0114AD459AD9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,41 +347,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C06C666A938F4D609F83484 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoadXpert/Pods-RoadXpert-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoadXpert/Pods-RoadXpert-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoadXpert/Pods-RoadXpert-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A8D0D07C33744E70D025047E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoadXpert-RoadXpertUITests/Pods-RoadXpert-RoadXpertUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoadXpert-RoadXpertUITests/Pods-RoadXpert-RoadXpertUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoadXpert-RoadXpertUITests/Pods-RoadXpert-RoadXpertUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CAC5644A527C0B39D5BF7377 /* [CP] Check Pods Manifest.lock */ = {
+		1E6265638452750F48DFF026 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -435,7 +369,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CB0D56302E5C0E3F9FD0407D /* [CP] Check Pods Manifest.lock */ = {
+		27F712B80DC817A8661018F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RoadXpertTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A03888D8F44DAE03C635BDE7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -457,26 +413,38 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FA47A500BFFB2E3D675BD226 /* [CP] Check Pods Manifest.lock */ = {
+		C8B4B5D6C56B0114AD459AD9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoadXpert-RoadXpertUITests/Pods-RoadXpert-RoadXpertUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RoadXpertTests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-RoadXpert-RoadXpertUITests/Pods-RoadXpert-RoadXpertUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoadXpert-RoadXpertUITests/Pods-RoadXpert-RoadXpertUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D888C3605DC6C09110B0CBC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoadXpert/Pods-RoadXpert-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoadXpert/Pods-RoadXpert-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoadXpert/Pods-RoadXpert-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -669,12 +637,15 @@
 		};
 		31BFC2A62585E6FE00BB686B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0655292382F0B9C6AEA6AA59 /* Pods-RoadXpert.debug.xcconfig */;
+			baseConfigurationReference = 80448B53263BC46DF08768C0 /* Pods-RoadXpert.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PJ83G8WMQ7;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = RoadXpert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -682,6 +653,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.RoadXpertApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -689,12 +661,15 @@
 		};
 		31BFC2A72585E6FE00BB686B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BD9F8240D1E9EABF7FEAE5A /* Pods-RoadXpert.release.xcconfig */;
+			baseConfigurationReference = FB26C01DF3D65FD9B9841147 /* Pods-RoadXpert.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PJ83G8WMQ7;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = RoadXpert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -703,6 +678,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.RoadXpertApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -710,7 +686,7 @@
 		};
 		31BFC2A92585E6FE00BB686B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07B6B5E9C9AEB04A4CBFDC41 /* Pods-RoadXpertTests.debug.xcconfig */;
+			baseConfigurationReference = 6C3D43151400D9BE6A4027D2 /* Pods-RoadXpertTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -733,7 +709,7 @@
 		};
 		31BFC2AA2585E6FE00BB686B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 240741B962B7103F6499C357 /* Pods-RoadXpertTests.release.xcconfig */;
+			baseConfigurationReference = 649E11945D8C0DB9E3BE22F6 /* Pods-RoadXpertTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -756,7 +732,7 @@
 		};
 		31BFC2AC2585E6FE00BB686B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7781B69A3D789F626A5900B /* Pods-RoadXpert-RoadXpertUITests.debug.xcconfig */;
+			baseConfigurationReference = 2306EA34F66D30901C599E89 /* Pods-RoadXpert-RoadXpertUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -777,7 +753,7 @@
 		};
 		31BFC2AD2585E6FE00BB686B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9E71D9208404B6D280DFDF4 /* Pods-RoadXpert-RoadXpertUITests.release.xcconfig */;
+			baseConfigurationReference = E7F9AC6E2DD1F6F2C24A7105 /* Pods-RoadXpert-RoadXpertUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -19,10 +19,13 @@ class Record: UIViewController {
     var last: CLLocation?
     var totalDistance = 0.0
     var distanceTemp = 0.0
+    var currLatitude = 0.0
+    var currLongitude = 0.0
     
     var currData = [Double]()
     var data = [[[Double]]]()
     var tempArray = [[Double]]()
+    var finalOutput = [[Double]]()
     
     var latitude = CLLocationDegrees()
     var longitude = CLLocationDegrees()
@@ -77,12 +80,6 @@ class Record: UIViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
         
-      //locationManager = CLLocationManager()
-      // Step 3: initalise and configure CLLocationManager
-        
-        // Step 4: request authorization
-        //locationManager.requestWhenInUseAuthorization()
-        // or
         locationManager.requestAlwaysAuthorization()
         if CLLocationManager.locationServicesEnabled() {
            
@@ -104,7 +101,7 @@ class Record: UIViewController {
         self.counter += 0.01
         self.counterTemp += 0.01
         self.watchLabel.text = String(format: "%.2f", self.counter)
-        
+   
         if (distanceTemp >= 8.05 || self.counterTemp >= 1.5) || (distanceTemp >= 8.05 && self.counterTemp >= 1.5) { //8.05 m or/and 1.5 sec reached.
             print("COUNTER TEMP: ")
             print(counterTemp)
@@ -112,13 +109,14 @@ class Record: UIViewController {
             distanceTemp = 0.0
             
             // 8.05m or 1.5 sec for resizing.
-            var outputTemp = [[Double]]() //150 x 3 or less than 150 x 3
+            var innerTemp = [Double](repeating: 0.0, count: 3)
+            var outputTemp = [[Double]](repeating: innerTemp, count: 150) //150 x 3 or less than 150 x 3
             if (speed > -1) { // Speed is accurate for data.
                 for i in 0...tempArray.count-1 {
                     print(String(speed) + " SPEED")
-                    let currLatitude = tempArray[i][3]
-                    let currLongitude = tempArray[i][4]
-                    outputTemp.append(Array(tempArray[i][0..<3])) //outputTemp = IRI input
+                    self.currLatitude = tempArray[i][3]
+                    self.currLongitude = tempArray[i][4]
+                    outputTemp[i] = Array(tempArray[i][0..<3]) //outputTemp = IRI input
                 }
                 data.append(outputTemp)
                 
@@ -126,7 +124,7 @@ class Record: UIViewController {
                 print("IRI OUTPUT:")
                 print(iriOutput)
                 
-                
+                //finalOutput.append([currLatitude, currLongitude, iriOutput])
                 
                 // IRI/model prediction here
                 // Final output (IRI, latitude, longitude)

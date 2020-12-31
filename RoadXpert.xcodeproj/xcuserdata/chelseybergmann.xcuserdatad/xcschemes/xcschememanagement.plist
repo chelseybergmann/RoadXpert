@@ -7,7 +7,25 @@
 		<key>RoadXpert.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>15</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>31BFC27A2585E6FB00BB686B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>31BFC2902585E6FE00BB686B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>31BFC29B2585E6FE00BB686B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
