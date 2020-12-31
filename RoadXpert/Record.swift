@@ -47,7 +47,8 @@ class Record: UIViewController {
     var counter = 0.0
     var counterTemp = 0.0
     var timer = Timer()
-    
+
+    @IBOutlet weak var stack: UIStackView!
     init() {
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         super.init(nibName: nil, bundle: nil)
@@ -70,6 +71,19 @@ class Record: UIViewController {
         print("DATA: ")
         print(data)
         print(data.count)
+        for i in 0...data.count-1 {
+            for j in 0...data[i].count-1 {
+                data[i][j] = Array(data[i][j].dropLast(2))
+            }
+              var iriInput = data[i]
+              let iriOutput = calcIRI(iriInput) // Single double value
+            print("DATA SIZE:")
+                print(data.count)
+            print("IRI OUTPUT:")
+            print(iriOutput)
+            
+        }
+      
        
     }
     
@@ -79,7 +93,6 @@ class Record: UIViewController {
     
     override func viewDidLoad() {
       super.viewDidLoad()
-        
         locationManager.requestAlwaysAuthorization()
         if CLLocationManager.locationServicesEnabled() {
            
@@ -109,20 +122,18 @@ class Record: UIViewController {
             distanceTemp = 0.0
             
             // 8.05m or 1.5 sec for resizing.
-            var innerTemp = [Double](repeating: 0.0, count: 3)
+            var innerTemp = [Double](repeating: 0.0, count: 5)
             var outputTemp = [[Double]](repeating: innerTemp, count: 150) //150 x 3 or less than 150 x 3
             if (speed > -1) { // Speed is accurate for data.
                 for i in 0...tempArray.count-1 {
                     print(String(speed) + " SPEED")
                     self.currLatitude = tempArray[i][3]
                     self.currLongitude = tempArray[i][4]
-                    outputTemp[i] = Array(tempArray[i][0..<3]) //outputTemp = IRI input
+                    outputTemp[i] = Array(tempArray[i]) //outputTemp = IRI input
                 }
                 data.append(outputTemp)
                 
-                let iriOutput = calcIRI(outputTemp) // Single double value
-                print("IRI OUTPUT:")
-                print(iriOutput)
+                
                 
                 //finalOutput.append([currLatitude, currLongitude, iriOutput])
                 
@@ -134,6 +145,7 @@ class Record: UIViewController {
             print(outputTemp)
             print("OUTPUT TEMP COUNT: ")
             print(outputTemp.count)
+            
             
             
             tempArray = [[Double]]() // Clear curr data for next use.
