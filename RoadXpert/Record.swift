@@ -72,18 +72,29 @@ class Record: UIViewController {
         print(data)
         print(data.count)
         for i in 0...data.count-1 {
+            var latitudes = [Double](repeating: 0.0, count: 150)
+            var longitudes = [Double](repeating: 0.0, count: 150)
             for j in 0...data[i].count-1 {
+                latitudes[j] = data[i][j][3]
+                longitudes[j] = data[i][j][4]
                 data[i][j] = Array(data[i][j].dropLast(2))
             }
-              var iriInput = data[i]
-              let iriOutput = calcIRI(iriInput) // Single double value
+            var iriInput = data[i]
+            let iriOutput = calcIRI(iriInput)[0].doubleValue // Single double value
+            let size = Double(latitudes.count)
+            let latOut = latitudes.reduce(0, +)/size //lat avg of 150x3
+            let longOut = longitudes.reduce(0, +)/size //long avg of 150x3
+            
             print("DATA SIZE:")
                 print(data.count)
             print("IRI OUTPUT:")
             print(iriOutput)
+          
+            finalOutput.append([iriOutput, latOut, longOut])
             
         }
-      
+        print("********FINAL OUTPUT********")
+        print(finalOutput)
        
     }
     
