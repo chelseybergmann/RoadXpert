@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3196BDD025A18FE9007BE899 /* TripSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196BDCF25A18FE9007BE899 /* TripSummary.swift */; };
 		31BFC27F2585E6FB00BB686B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC27E2585E6FB00BB686B /* AppDelegate.swift */; };
 		31BFC2812585E6FB00BB686B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFC2802585E6FB00BB686B /* SceneDelegate.swift */; };
 		31BFC2862585E6FB00BB686B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31BFC2842585E6FB00BB686B /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		31E8D206259A69060014225B /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E8D205259A69060014225B /* login.swift */; };
 		393747100297CE97F7C8CB6D /* Pods_RoadXpert_RoadXpertUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB91AB2D0A7C93B80611F825 /* Pods_RoadXpert_RoadXpertUITests.framework */; };
 		C6965BE8ED37A18FE75B7322 /* Pods_RoadXpertTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95488C9F8F9F79AA651B5C5 /* Pods_RoadXpertTests.framework */; };
+		FBA562D69ADE0E2FA6AE962F /* Pods_RoadXpert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4618EB42372E6BB35064A36 /* Pods_RoadXpert.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		2306EA34F66D30901C599E89 /* Pods-RoadXpert-RoadXpertUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadXpert-RoadXpertUITests.debug.xcconfig"; path = "Target Support Files/Pods-RoadXpert-RoadXpertUITests/Pods-RoadXpert-RoadXpertUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3196BDCF25A18FE9007BE899 /* TripSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSummary.swift; sourceTree = "<group>"; };
 		31BFC27B2585E6FB00BB686B /* RoadXpert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadXpert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BFC27E2585E6FB00BB686B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31BFC2802585E6FB00BB686B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA562D69ADE0E2FA6AE962F /* Pods_RoadXpert.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +159,7 @@
 				31BFC28C2585E6FE00BB686B /* Info.plist */,
 				31BFC2B12585EF6A00BB686B /* Record.swift */,
 				31BFC2BF25862CB600BB686B /* AllHistory.swift */,
+				3196BDCF25A18FE9007BE899 /* TripSummary.swift */,
 				31BFC2C72586324200BB686B /* GoogleService-Info.plist */,
 				31BFC31725866AFD00BB686B /* Motion.swift */,
 				31BFC33125869C7200BB686B /* Core Model */,
@@ -463,6 +468,7 @@
 				31BFC27F2585E6FB00BB686B /* AppDelegate.swift in Sources */,
 				31BFC340258BEFB300BB686B /* CoreMLTest.swift in Sources */,
 				31E8D1EC259A16190014225B /* model3.xcdatamodeld in Sources */,
+				3196BDD025A18FE9007BE899 /* TripSummary.swift in Sources */,
 				31BFC2812585E6FB00BB686B /* SceneDelegate.swift in Sources */,
 				31BFC2C025862CB600BB686B /* AllHistory.swift in Sources */,
 			);
