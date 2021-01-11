@@ -113,8 +113,7 @@ class Record: UIViewController, MKMapViewDelegate {
             let time = String(dateSplit[1])
             // Send to firebase.
             if let userID = Auth.auth().currentUser?.uid {
-                self.ref.child("users").child(userID).child(today).child(time).setValue(["finalOutput": finalOutput,
-                                                                                         "Route": map!])
+                self.ref.child("users").child(userID).child(today).child(time).setValue(["finalOutput": finalOutput])
             
             }
            
