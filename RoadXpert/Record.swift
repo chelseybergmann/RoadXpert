@@ -90,14 +90,19 @@ class Record: UIViewController, MKMapViewDelegate {
                     longitudes[j] = data[i][j][4]
                     data[i][j] = Array(data[i][j].dropLast(2))
                 }
+                let smoothLatitudes = gpsSmoothing(gps: latitudes)
+                let smoothLongitudes = gpsSmoothing(gps: longitudes)
+                let snappedLatitudes = gpsGridSnap(gps: smoothLatitudes)
+                let snappedLongitudes = gpsGridSnap(gps: smoothLongitudes)
+                
                 var iriInput = data[i]
                 let iriOutput = calcIRI(iriInput)[0].doubleValue // Single double value
                 let size = Double(latitudes.count)
-                let latOut = latitudes.reduce(0, +)/size //lat avg of 150x3
-                let longOut = longitudes.reduce(0, +)/size //long avg of 150x3
+                let latOut = snappedLatitudes.reduce(0, +)/size //lat avg of 150x3
+                let longOut = snappedLongitudes.reduce(0, +)/size //long avg of 150x3
                 
                 print("DATA SIZE:")
-                    print(data.count)
+                print(data.count)
                 print("IRI OUTPUT:")
                 print(iriOutput)
               
@@ -116,10 +121,83 @@ class Record: UIViewController, MKMapViewDelegate {
                 self.ref.child("users").child(userID).child(today).child(time).setValue(["finalOutput": finalOutput])
             
             }
-           
-           
         }
     }
+    
+    func gpsSmoothing(gps: [Double]) -> [Double] {
+        let changePoints = gps.count
+        var idxs = [Int]()
+        
+        // find indexes that gps coordinate changes happened
+        for i in 0..<changePoints {
+            if i == 0 {
+                if abs(gps[0]-gps[i]) > 0 {
+                    idxs.append(i)
+                }
+            } else {
+                    if abs(gps[i-1] - gps[i]) > 0 {
+                        idxs.append(i)
+                    }
+                }
+        }
+        print("IDXS: ")
+        print(idxs)
+        var newGPS = [Double](repeating: gps[gps.count-1], count: gps.count) //np.ones
+        
+        for i in 0...idxs.count-1 {
+            if i == 0 {
+                let tmp = gps[0..<idxs[i]+1]
+                let ttmp = linspace(start: tmp[0], tmp[tmp.count-1], num: tmp.count-1)
+                
+                newGPS[0] = ttmp[0]
+       
+            } else {
+                let tmp = gps[idxs[i-1]..<idxs[i]+1]
+                print("TMP: ")
+                print(i)
+                print(idxs.count)
+                
+                let coords = [32.20393293, 32.40393283, 32.78584839]
+                let ttmp = linspace(start: coords[0], coords[coords.count-1], num: coords.count-1)
+                
+                for y in 0..<i {
+                    if y == 0 {
+                        newGPS[0] = ttmp[0]
+                    } else {
+                    newGPS[y-1] = ttmp[i-1]
+                    }
+                }
+            }
+        }
+        return newGPS
+    }
+    
+    /*
+     Create a linear array with equal spacing between start and end consisting of
+     n doubles.
+     */
+    public func linspace(start:Double, _ end:Double, num:Int) -> [Double] {
+        var ttmp = [Double](repeating: 0.0, count: num)
+        var n = (end-start)+1
+        for i in 0...ttmp.count-1 {
+                ttmp[i] = (end-start)/(Double(n))
+            }
+        return ttmp
+    }
+    
+    public func gpsGridSnap(gps: [Double]) -> [Double] {
+        // all gps coordinate will snap to 25 ft grid point
+            let gpscoeff = 0.0001/11.122634257478698
+            let gridcoeff = gpscoeff*8.05 // 8.05m
+        var newGPS = [Double](repeating: 0.0, count: gps.count)
+        for i in  0..<gps.count {
+            newGPS[i] = (gps[i]/gridcoeff).rounded()*gridcoeff
+        }
+         //   let latcoeff = np.round(gps/gridcoeff)
+          //  let newgps = gridcoeff*latcoeff
+        return newGPS
+    }
+    
     /*
      Write output to a text file for more storage.
      */
@@ -177,8 +255,9 @@ class Record: UIViewController, MKMapViewDelegate {
         self.counter += 0.01
         self.counterTemp += 0.01
         self.watchLabel.text = String(format: "%.2f", self.counter)
+        
         if (self.speed >= 0) {
-        self.speedLabel.text = String(self.speed)
+            self.speedLabel.text = String(self.speed)
         }
         if (distanceTemp >= 8.05 || self.counterTemp >= 1.5) || (distanceTemp >= 8.05 && self.counterTemp >= 1.5) { //8.05 m or/and 1.5 sec reached.
             print("COUNTER TEMP: ")
@@ -199,8 +278,6 @@ class Record: UIViewController, MKMapViewDelegate {
                 }
                 data.append(outputTemp)
                 
-                
-                
                 //finalOutput.append([currLatitude, currLongitude, iriOutput])
                 
                 // IRI/model prediction here
@@ -218,14 +295,12 @@ class Record: UIViewController, MKMapViewDelegate {
         self.currData = [self.speed/25, self.yAccel, self.xGyro, self.latitude, self.longitude]
         print("CURRENT DATA")
         print(self.currData)
-        // Constantly add data to the temp array of data until 8.05m or 1.5 sec.
-        if (self.speed >= 25) { // Accurate speed.
-        
-            tempArray.append(currData)
-     
-            print(totalDistance)
             
-        }
+        // Constantly add data to the temp array of data until 8.05m or 1.5 sec.
+     //   if (self.speed >= 25) { // Accurate speed.
+            tempArray.append(currData)
+            print(totalDistance)
+     //   }
         }
     }
     
@@ -235,9 +310,6 @@ class Record: UIViewController, MKMapViewDelegate {
             let iriInput = convertToMLArray(input)
             let iriOutput = try model.prediction(input1: iriInput) // Prediction.
             return iriOutput.output1
-            //print("IRI OUTPUT: ")
-            //print(iriOutput.output1)
-            // more code here
         } catch {
             print("ERROR:")
             print(error)
